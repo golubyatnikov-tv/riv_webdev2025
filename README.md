@@ -1,73 +1,48 @@
-# React + TypeScript + Vite
+# CosmoObjects
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Веб-приложение для визуализации космических объектов (планет) Солнечной системы.
 
-Currently, two official plugins are available:
+Учебный проект, созданный для демонстрации на двух лекциях по курсу Web-технологии. Приложение демонстрирует основные концепции современной веб-разработки с использованием React и TypeScript.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Функциональность
 
-## React Compiler
+- Визуализация планет в виде кругов, пропорциональных их диаметру
+- Список космических объектов с информацией о диаметре и типе
+- Загрузка данных через REST API (json-server)
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## Технологии
 
-## Expanding the ESLint configuration
+- **React 19** - библиотека для создания пользовательского интерфейса
+- **TypeScript** - типизированный JavaScript
+- **Vite** - инструмент сборки и разработки
+- **Ant Design** - UI библиотека компонентов
+- **React Query (TanStack Query)** - управление состоянием серверных данных
+- **Axios** - HTTP клиент
+- **json-server** - mock REST API сервер
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Установка и запуск
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Установите зависимости:
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Запустите json-server для API:
+```bash
+npx json-server --watch db.json --port 3000
 ```
+
+3. В другом терминале запустите приложение:
+```bash
+npm run dev
+```
+
+Приложение будет доступно по адресу `http://localhost:5173`
+
+## Структура проекта
+
+- `src/App.tsx` - главный компонент приложения
+- `src/Visualizer.tsx` - компонент визуализации планет
+- `src/api.ts` - настройка React Query для загрузки данных
+- `src/types.ts` - TypeScript типы
+- `db.json` - база данных для json-server
