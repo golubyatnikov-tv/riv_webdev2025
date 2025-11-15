@@ -1,35 +1,28 @@
 {
   "cosmicObjects": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Меркурий",
       "diameterKm": 4879,
-      "color": "#c1b4a8",
+      "color": "#ff7b00",
       "type": "Планета земной группы"
     },
     {
-      "id": 2,
-      "name": "Венера",
-      "diameterKm": 12104,
-      "color": "#e5c07b",
-      "type": "Планета земной группы"
-    },
-    {
-      "id": 3,
+      "id": "3",
       "name": "Земля",
-      "diameterKm": 12742,
+      "diameterKm": 52742,
       "color": "#4fa1d8",
       "type": "Планета земной группы"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Марс",
       "diameterKm": 6779,
       "color": "#c1440e",
       "type": "Планета земной группы"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Юпитер",
       "diameterKm": 139822,
       "color": "#d1b48c",
