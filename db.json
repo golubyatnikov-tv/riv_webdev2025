@@ -27,6 +27,13 @@
       "diameterKm": 139822,
       "color": "#d1b48c",
       "type": "Газовый гигант"
+    },
+    {
+      "id": "BK49k93V-4qW8mtgi35Qc",
+      "name": "Меркурий222",
+      "diameterKm": 50000,
+      "color": "#4eff45",
+      "type": "Газовый гигант"
     }
   ]
 }

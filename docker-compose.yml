@@ -1,0 +1,22 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile.server    
+    environment:
+      - NODE_ENV=production
+    networks:
+      - cosmo-network
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    ports:
+      - "8080:80"
+    depends_on:
+      - server
+    networks:
+      - cosmo-network
+
+networks:
+  cosmo-network:
